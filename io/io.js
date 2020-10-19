@@ -1,0 +1,255 @@
+/*
+*介绍：socket.io 功能封装
+*作者：TaiGuangYin
+*时间：2017-09-09
+* */
+var redis = require('../utils/redis');
+var msgType = require('./messageTpye');
+var ioSvc = require('./ioHelper').ioSvc;
+var AppConfig = require('../config');
+var Common = require('../utils/common');
+var msgModel = require('../model/message');
+
+//服务端连接
+function ioServer(io) {
+
+    var _self = this;
+    ioSvc.setInstance(io);
+
+    var __uuids = []
+
+
+    //初始化连接人数
+    redis.set('online_count',0,null,function (err,ret) {
+        if(err){
+            console.error(err);
+        }
+    });
+
+    Array.prototype.remove = function(val) {
+        var index = this.indexOf(val);
+        if (index > -1) {
+            this.splice(index, 1);
+        }
+    };
+
+    io.on('connection', function (socket) {
+        console.log('SocketIO有新的连接!');
+
+        _self.updateOnlieCount(true);
+
+        //用户与Socket进行绑定
+        socket.on('login', function (msg) {
+            var uid = msg.uid;
+            console.log(uid+'登录成功');
+            var isClient = msg.isClient;
+            //通知用户上线
+            if(isClient){
+                var uidMap = uid + ":" + msg.targ;
+                if(__uuids.indexOf(uidMap) == -1){
+                    __uuids.push(uidMap);
+                    var uuids = JSON.stringify(__uuids);
+                    redis.set('user-uuids',uuids,null,function (err,ret) {
+                        if(err){
+                            console.error(err);
+                        }
+                    });
+
+                    redis.get('user-uuids',function (err,uuids) {
+                        console.error(err);
+                    });
+                }
+                redis.get('user-uuids',function (err,uuids) {
+                    console.error(err);
+                });
+                redis.get(uid,function (err,sid) {
+                    if(err){
+                        console.error(err);
+                    }
+                    if(sid == null){
+                        redis.get('online_count',function (err,val) {
+                            if(err){
+                                console.error(err);
+                            }
+                            if(!val){
+                                val = 0;
+                            }
+                            if(typeof val == 'string'){
+                                val = parseInt(val);
+                            }
+
+                            //var ip = socket.request.connection.remoteAddress;
+                            //此处获取IP可能会有延迟，建议改成自己的IP库
+
+
+                        });
+                    }
+                });
+                redis.set(uidMap,socket.id,null,function (err,ret) {
+                    if(err){
+                        console.error(err);
+                    }
+                });
+
+                redis.set(socket.id,uidMap,null,function (err,ret) {
+                    if(err){
+                        console.error(err);
+                    }
+                });
+            }else{
+                redis.set(uid,socket.id,null,function (err,ret) {
+                    if(err){
+                        console.error(err);
+                    }
+                });
+
+                redis.set(socket.id,uid,null,function (err,ret) {
+                    if(err){
+                        console.error(err);
+                    }
+                });
+            }
+
+
+        });
+
+        //断开事件
+        socket.on('disconnect', function() {
+            console.log("与服务器械断开");
+
+            _self.updateOnlieCount(false);
+
+            redis.get(socket.id,function (err,val) {
+                if(err){
+                    console.error(err);
+                }
+                redis.del(socket.id,function (err,ret) {
+                    if(err){
+                        console.error(err);
+                    }
+
+                });
+                redis.del(val,function (err,ret) {
+                    if(err){
+                        console.error(err);
+                    }
+                });
+                //通知用户下线
+                if(true){
+                    redis.get(val,function (err,sid) {
+                        if(err){
+                            console.error(err);
+                        }
+                        if(sid){
+                            var info = {
+                                "uid":val,
+                                "name":'客户下线',
+                                "type":'offline'
+                            };
+                            io.to(sid).emit('update-users',info);
+                        }
+                    });
+
+                    redis.get('user-uuids',function (err,uuids) {
+
+                        //val = parseInt(val);
+                        var idx = __uuids.indexOf(val);
+                        if( idx != -1){
+                            __uuids.remove(val);
+                            //uuids.splice(idx,1);
+                            var uuids = JSON.stringify(__uuids);
+                            redis.set('user-uuids',uuids,null,function (err,ret) {
+                                if(err){
+                                    console.error(err);
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        });
+
+        //重连事件
+        socket.on('reconnect', function() {
+            console.log("重新连接到服务器");
+        });
+
+        //监听客户端发送的信息,实现消息转发到各个其他客户端
+        socket.on('message',function(msg){
+            msgModel.add(msg.from_uid,msg.uid,msg.content,msg.chat_type,msg.image,function (err) {
+                if(err){
+                    console.error(err);
+                }
+            });
+            if(msg.type == msgType.messageType.public){
+                var mg = {
+                    "uid" : msg.from_uid  ,
+                    "content": msg.content,
+                    "chat_type" :  msg.chat_type?msg.chat_type:'text',
+                    "image":msg.image
+                };
+                socket.broadcast.emit("message",mg);
+            }else if(msg.type == msgType.messageType.private){
+                if (msg.isClient == 1){
+                    var uid = msg.uid + ":" + msg.from_uid;
+                }else{
+                    var uid = msg.uid;
+                }
+                redis.get(uid,function (err,sid) {
+                    if(err){
+                        console.error(err);
+                    }
+                    if(sid){
+                        //给指定的客户端发送消息
+                        var mg = {
+                            "uid" : msg.from_uid,
+                            "from_uid" : msg.uid,
+                            "content": msg.content,
+                            "chat_type" :  msg.chat_type?msg.chat_type:'text',
+                            "image":msg.image
+                        };
+                        io.to(sid).emit('message',mg);
+                    }
+                });
+            }
+
+        });
+    });
+
+    this.updateOnlieCount = function (isConnect) {
+        //记录在线客户连接数
+        redis.get('online_count',function (err,val) {
+            if(err){
+                console.error(err);
+            }
+            if(!val){
+                val = 0;
+            }
+            if(typeof val == 'string'){
+                val = parseInt(val);
+            }
+            if(isConnect){
+                val += 1;
+            }else{
+                val -= 1;
+                if(val<=0){
+                    val = 0;
+                }
+            }
+
+            console.log('当前系统在线人数：'+val);
+            io.sockets.emit('update_online_count', { online_count: val });
+
+            redis.set('online_count',val,null,function (err,ret) {
+                if(err){
+                    console.error(err);
+                }
+            });
+        });
+    };
+
+}
+
+
+//模块导出
+exports.ioServer = ioServer;

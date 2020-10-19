@@ -1,0 +1,217 @@
+(node:25249) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/4.x/docs/connections.html#use-mongo-client
+(node:25249) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Error: Failed to lookup view "error" in views directory "/home/work/KeFu/views"
+    at Function.render (/home/work/KeFu/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/work/KeFu/node_modules/express/lib/response.js:971:7)
+    at /home/work/KeFu/app.js:45:7
+    at Layer.handle_error (/home/work/KeFu/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:315:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/app.js:34:3
+    at Layer.handle [as handle_request] (/home/work/KeFu/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:317:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:635:15
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:260:14)
+(node:1969) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/4.x/docs/connections.html#use-mongo-client
+(node:2042) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/4.x/docs/connections.html#use-mongo-client
+Error: Failed to lookup view "error" in views directory "/home/work/KeFu/views"
+    at Function.render (/home/work/KeFu/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/work/KeFu/node_modules/express/lib/response.js:971:7)
+    at /home/work/KeFu/app.js:45:7
+    at Layer.handle_error (/home/work/KeFu/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:315:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/app.js:34:3
+    at Layer.handle [as handle_request] (/home/work/KeFu/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:317:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:635:15
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:260:14)
+null
+null
+Error: Failed to lookup view "error" in views directory "/home/work/KeFu/views"
+    at Function.render (/home/work/KeFu/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/work/KeFu/node_modules/express/lib/response.js:971:7)
+    at /home/work/KeFu/app.js:45:7
+    at Layer.handle_error (/home/work/KeFu/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:315:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at Layer.handle_error (/home/work/KeFu/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:315:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at Immediate.next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at Immediate.<anonymous> (/home/work/KeFu/node_modules/express/lib/router/index.js:635:15)
+    at processImmediate (internal/timers.js:441:21)
+null
+(node:2042) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+null
+null
+Error: Failed to lookup view "error" in views directory "/home/work/KeFu/views"
+    at Function.render (/home/work/KeFu/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/work/KeFu/node_modules/express/lib/response.js:971:7)
+    at /home/work/KeFu/app.js:45:7
+    at Layer.handle_error (/home/work/KeFu/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:315:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/app.js:34:3
+    at Layer.handle [as handle_request] (/home/work/KeFu/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:317:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:635:15
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:260:14)
+Error: Failed to lookup view "error" in views directory "/home/work/KeFu/views"
+    at Function.render (/home/work/KeFu/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/work/KeFu/node_modules/express/lib/response.js:971:7)
+    at /home/work/KeFu/app.js:45:7
+    at Layer.handle_error (/home/work/KeFu/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:315:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/app.js:34:3
+    at Layer.handle [as handle_request] (/home/work/KeFu/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:317:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:635:15
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:260:14)
+null
+null
+null
+null
+Error: Failed to lookup view "error" in views directory "/home/work/KeFu/views"
+    at Function.render (/home/work/KeFu/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/work/KeFu/node_modules/express/lib/response.js:971:7)
+    at /home/work/KeFu/app.js:45:7
+    at Layer.handle_error (/home/work/KeFu/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:315:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/app.js:34:3
+    at Layer.handle [as handle_request] (/home/work/KeFu/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:317:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:635:15
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:260:14)
+null
+null
+null
+null
+null
+null
+null
+null
+null
+Error: Failed to lookup view "error" in views directory "/home/work/KeFu/views"
+    at Function.render (/home/work/KeFu/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/work/KeFu/node_modules/express/lib/response.js:971:7)
+    at /home/work/KeFu/app.js:45:7
+    at Layer.handle_error (/home/work/KeFu/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:315:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/app.js:34:3
+    at Layer.handle [as handle_request] (/home/work/KeFu/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:317:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:635:15
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:260:14)
+null
+null
+Error: Failed to lookup view "error" in views directory "/home/work/KeFu/views"
+    at Function.render (/home/work/KeFu/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/work/KeFu/node_modules/express/lib/response.js:971:7)
+    at /home/work/KeFu/app.js:45:7
+    at Layer.handle_error (/home/work/KeFu/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:315:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/app.js:34:3
+    at Layer.handle [as handle_request] (/home/work/KeFu/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:317:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:635:15
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:260:14)
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+(node:8431) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/4.x/docs/connections.html#use-mongo-client
+Error: Failed to lookup view "error" in views directory "/home/work/KeFu/views"
+    at Function.render (/home/work/KeFu/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/work/KeFu/node_modules/express/lib/response.js:971:7)
+    at /home/work/KeFu/app.js:45:7
+    at Layer.handle_error (/home/work/KeFu/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:315:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/app.js:34:3
+    at Layer.handle [as handle_request] (/home/work/KeFu/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/work/KeFu/node_modules/express/lib/router/index.js:317:13)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/work/KeFu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:275:10)
+    at /home/work/KeFu/node_modules/express/lib/router/index.js:635:15
+    at next (/home/work/KeFu/node_modules/express/lib/router/index.js:260:14)
+null
+null
+null
+null
+(node:8431) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+null
+null
